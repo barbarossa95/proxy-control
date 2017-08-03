@@ -1,0 +1,70 @@
+logoutput: /var/log/sockd.log
+internal: 127.0.0.2 port = 11155
+internal: 151.248.125.141 port = 11155
+internal: 194.58.40.107 port = 11155
+internal: 193.124.18.134 port = 11155
+internal: 194.58.46.48 port = 11155
+internal: 194.58.39.54 port = 11155
+internal: 193.124.18.130 port = 11155
+internal: 193.124.44.158 port = 11155
+internal: 194.58.40.156 port = 11155
+internal: 193.124.44.50 port = 11155
+internal: 194.58.46.57 port = 11155
+internal: 194.58.47.147 port = 11155
+external: 127.0.0.2
+external: 151.248.125.141
+external: 194.58.40.107
+external: 193.124.18.134
+external: 194.58.46.48
+external: 194.58.39.54
+external: 193.124.18.130
+external: 193.124.44.158
+external: 194.58.40.156
+external: 193.124.44.50
+external: 194.58.46.57
+external: 194.58.47.147
+external.rotation: same-same
+
+#method: username
+#user.privileged: root
+
+#socksmethod: username none
+#user.unprivileged: nobody
+
+#method: username
+#user.privileged: root
+#user.unprivileged: nobody
+#pass {
+#        from: 0.0.0.0/0 to: 0.0.0.0/0
+#}
+
+#client pass { from: 213.87.127.148/0 port 1-65535 to: 0.0.0.0/0 }
+#client pass { from: 0.0.0.0/0 to: 0.0.0.0/0 }
+#client block {
+#from: 0.0.0.0/0 to: 127.0.0.0/8
+#log: connect error
+#}
+#client block {
+#from: 0.0.0.0/0 to: 0.0.0.0/0
+#log: connect error
+#}
+
+#socks pass {
+#from: 0.0.0.0/0 to: 0.0.0.0/0
+#}
+
+socksmethod: username
+user.privileged: root
+
+client pass {
+from: 0.0.0.0/0 to: 0.0.0.0/0
+log: error connect disconnect
+}
+pass {
+from: 0.0.0.0/0 to: 0.0.0.0/0
+protocol: tcp udp
+log: error # connect disconnect
+}
+
+
+
