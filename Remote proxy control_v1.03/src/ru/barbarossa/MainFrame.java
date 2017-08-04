@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.control.Dialog;
 import javax.swing.JCheckBox;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
@@ -307,8 +308,13 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         InterfacesConfigurator confForm = new InterfacesConfigurator();
-        confForm.pack();
-        confForm.setVisible(true);
+        JDialog dialog = new JDialog(this,"theTitle", true);
+        dialog.setContentPane(confForm.getContentPane());
+        dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        dialog.pack();
+        dialog.setVisible(true);
+//        confForm.pack();
+//        confForm.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
